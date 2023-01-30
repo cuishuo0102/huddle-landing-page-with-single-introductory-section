@@ -1,0 +1,171 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+$mobile-s-breakpoint: 425px;
+$laptop-breakpoint: 1024px;
+
+body {
+  margin: 0;
+
+  --color-violet: hsl(257, 40%, 49%);
+  --color-soft-magenta: hsl(300, 69%, 71%);
+}
+
+.page {
+  min-height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-violet);
+  padding: 24px;
+
+  @media screen and (max-width: $mobile-s-breakpoint) {
+    background-image: url(./images/bg-mobile.svg);
+  }
+
+  @media screen and (min-width: $laptop-breakpoint) {
+    background-image: url(./images/bg-desktop.svg);
+  }
+}
+
+.logo {
+  height: 30px;
+  padding: 6px 8px;
+
+  @media (min-width: $laptop-breakpoint) {
+    height: 50px;
+    padding: 30px 48px;
+  }
+}
+
+.hero {
+  .hero {
+    display: block;
+    object-fit: contain;
+
+    @media (max-width: $mobile-s-breakpoint) {
+      margin: 48px auto;
+      width: 92%;
+    }
+
+    @media (min-width: $laptop-breakpoint) {
+      padding: 52px 50px 0 32px;
+    }
+  }
+
+  .intro {
+    color: #fff;
+    text-align: center;
+
+    @media (min-width: $laptop-breakpoint) {
+      padding: 84px 44px 0 0;
+      text-align: left;
+    }
+
+    .title {
+      padding: 10px 0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+
+      @media (min-width: $laptop-breakpoint) {
+        font-size: 42px;
+        letter-spacing: -1.6px;
+        line-height: 1.4em;
+      }
+    }
+
+    .desc {
+      padding: 0 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      line-height: 24px;
+
+      @media (min-width: $laptop-breakpoint) {
+        font-size: 17px;
+        padding: 14px 0;
+        line-height: 25px;
+      }
+    }
+
+    .actions {
+      padding: 16px 0;
+      font-family: 'Open Sans', sans-serif;
+
+      @media (min-width: $laptop-breakpoint) {
+        padding: 14px 0;
+        line-height: 25px;
+      }
+
+      .register {
+        width: 200px;
+        height: 40px;
+        padding: 12px 0;
+        border-radius: 999px;
+        border: none;
+        box-shadow: 0 2px 25px 3px rgba(0, 0, 0, 0.2);
+        color: var(--color-violet);
+        font-size: 12px;
+        cursor: pointer;
+
+        &:hover {
+          color: #fff;
+          background-color: var(--color-soft-magenta);
+          box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (min-width: $laptop-breakpoint) {
+          height: 54px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  margin: 47px auto 0;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: $laptop-breakpoint) {
+    justify-content: flex-end;
+    margin: 28px 50px 64px 0;
+  }
+
+  .social-link {
+    margin: 0 5px;
+    height: 24px;
+    width: 24px;
+    color: #fff;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $laptop-breakpoint) {
+      transform: scale(1.5);
+      margin: 0 14px;
+    }
+  }
+}
+
+footer {
+  @media (min-width: $laptop-breakpoint) {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 84%);
+}
